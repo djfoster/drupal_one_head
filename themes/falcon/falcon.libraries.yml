@@ -1,0 +1,15 @@
+bootstrap:
+  version: 3.1.1 
+  css:
+    theme:
+      assets/lib/bootstrap/css/bootstrap.css: {}
+      assets/lib/bootstrap/css/bootstrap-theme.css: {}
+  js:
+    assets/lib/bootstrap/js/bootstrap.js: {}
+custom-falcon:
+  css:
+    theme:
+      assets/css/main.css: {}
+  dependencies:
+  - core/jquery
+  - core/drupal

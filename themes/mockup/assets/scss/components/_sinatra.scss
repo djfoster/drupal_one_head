@@ -1,0 +1,18 @@
+.sinatra-component {
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.sinatra-component--image {
+  img {
+    display: block;
+    height: auto;
+    width: 100%; 
+  }
+}
+
+.sinatra-component--description {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid #000;
+  padding: 1em;
+}

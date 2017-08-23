@@ -1,0 +1,237 @@
+//BRANDING BLOCK
+#block-falcon-branding {
+  float: left;
+  max-width: 150px;
+  z-index: 10;
+
+  @media #{$phone} { 
+    max-width: 115px;
+  }
+}
+
+.site-name {
+  @include hidden(); 
+}
+
+.site-slogan {
+  color: $primaryColor3;
+  @media #{$phone} { 
+    @include fontSize(12px);
+  }
+}
+
+//IMAGES INSIDE ARTICLE
+article {
+  img {
+    margin-bottom: 1em;
+  }
+}
+
+//MESSAGES FROM DRUPAL
+.messages {
+  box-shadow: none;
+  border: none;
+}
+
+//TABS 
+.tabs {
+  margin: 1em 0;
+  text-align: right;
+
+  & > li {
+    margin-bottom: 0.25em;
+  }
+
+  a {
+    border: 2px solid $primaryColor1;
+    text-transform: uppercase;
+
+    &:is-active {
+      background: $baseColor2;
+    }
+
+    &:hover {
+      background: $baseColor2;
+      color: $primaryColor1; 
+    }
+  }
+}
+
+//DEFAULT FOR LIST ELEMENTS INSIDE VIEWS
+.view .item-list li {
+  @include clearfix();
+  list-style: none;
+  margin: 0 0 0.5em 0;
+}
+
+//DEFAULT CONTENT INSIDE VIEWS
+.view-content {
+  h3 {
+    line-height: 1;
+    padding-top: 0;
+  }
+
+  div {
+    word-wrap: break-word;
+  }
+
+  .inner-image-container {
+    float: left;
+    img {
+      background: $baseColor1;
+      margin: 0 1em 1em 0;
+      padding: 0.5em;
+    }
+  }
+}
+
+//EXCLUSIVE TO EVENT FEATURE
+.view-display-id-events {
+  .item-list ul {
+    display: flex;
+    flex-wrap: wrap;
+
+    .inner-image-container {
+      float: none;
+    }
+
+    > li {
+      @include backgroundOpacity($baseColor2, 0.5);
+      border: 5px solid $baseColor1;
+      margin-bottom: 1em;
+      padding: 1em;
+      width: 50%;
+
+      @media #{$phone} {
+        width: 100%;
+      }
+    }
+
+    @media #{$phone} {
+      flex-direction: column;
+    }
+
+    div {
+      @include fontSize(14px);
+      color: $primaryColor3;
+      font-style: italic;
+      line-height: 1.25;
+      padding: 0.5em 0;
+    }
+  }
+}
+
+//BLOCK SEARCH
+#search-block-form {
+  display: flex;
+
+  .form-type-search {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+//DEFAULT BLOCK
+.block {
+  h3 {
+    padding: 0;
+  }
+}
+
+//DEFAULT LINK TO VIEWS
+.more-link {
+  a {
+    @include buttonStyle();
+    @include backgroundOpacity($primaryColor1, 0.85);
+    border-radius: 5px;
+    padding: 0.25em 1.5em;
+  }
+}
+
+//FOOTER PARTICULARITIES
+footer  {
+  a {
+    color: $baseColor1;
+  }
+
+  .block-menu > .menu {
+    padding-left: 1.5em;
+  }
+}
+
+//TEASER
+.node--view-mode-teaser {
+  .field--name-field-image {
+    float: left;
+    padding-right: 1em;
+  }
+}
+
+.view-taxonomy-term {
+  .views-row {
+    border-bottom: 1px dotted $secondaryColor3;  
+    padding-bottom: 1em;
+  }
+
+  .node__links {
+    text-align: right;
+
+    li {
+      margin-right: 1.5em;
+    }
+  }
+
+  .field--type-entity-reference {
+    display: flex; 
+
+    .field__label,
+    .field__items {
+      padding: 0 0.25em;
+    }
+  }
+}
+
+//RSS ICON
+.feed-icons {
+  padding: 1em;
+}
+
+//NEWS
+.view-display-id-news {
+  .field--type-image {
+    padding: 0 1em 1em 0;
+  }
+
+  .view-content {
+    .item-list li {
+      @include backgroundOpacity($baseColor2, 1);
+      padding: 2em;
+    }
+  }
+}
+
+//ARTICLE
+.node--type-article .field--name-field-image {
+  float: left;
+  max-width: 700px;
+  padding: 0 1em 1em 0; 
+}
+
+//SIDEBAR PARTICULARITIES
+aside {
+  .item-list {
+    li {
+      border-bottom: 2px dotted $primaryColor1;
+      padding: 1em 0;
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+
+  .block-title {
+    background: $primaryColor2;
+    color: $baseColor1;
+    padding: 0.25em 1em;
+  }
+}

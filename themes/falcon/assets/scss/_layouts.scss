@@ -1,0 +1,85 @@
+//HEADER REGION
+header {
+  margin: 0 auto;
+  max-width: 1170px;
+  padding: 1em 2em;
+
+  @media #{$phone} { 
+    padding: 1em;
+  }
+}
+
+//ASIDE REGION
+aside {
+  background: $baseColor2;
+  .block {
+    border-bottom: 2px dashed $baseColor1;
+    margin-bottom: 1.5em;
+    padding: 1em 0;
+
+    &:last-child {
+      border: none;
+    }
+
+    @media #{$phone} {
+      padding: 1em 0; 
+    }
+
+    h4 {
+      @include fontSize(18px);
+    }
+  }
+
+  h2 {
+    @include fontSize(24px);
+    padding-top: 0;
+  }
+}
+
+//FOOTER REGION
+footer {
+  background: $primaryColor1;
+  color: $baseColor1;
+  padding: 2em 0;
+
+  .inner-container-region {
+    display: flex;
+
+    .block {
+      width: 100%;
+    }
+
+    @media #{$phone} {
+      flex-direction: column;
+    }
+  }
+
+  h3,
+  h2 {
+    @include fontSize(20px); 
+    font-weight: 400;
+    padding: 0;
+  }
+
+  ul li {
+    list-style: disc;
+  }
+}
+
+//FOOTER BOTTOM REGION
+.footer-bottom {
+  background: $primaryColor2;
+  color: $baseColor1;
+  padding: 0.5em 0;
+
+  a,
+  .menu .menu-item a {
+    @include fontSize(14px);
+    color: $primaryColor1;
+    display: block;
+
+    &:hover {
+      color: $primaryColor3;
+    }
+  }
+}

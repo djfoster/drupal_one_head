@@ -1,0 +1,336 @@
+html {
+  font-size: 16px;
+}
+
+body {
+  @include primaryFont;
+  background: url('../img/bg.jpg');
+  color: $primaryColor;
+}
+
+/*-----------------------------------------------------------------------------
+ *           Headers            
+ *---------------------------------------------------------------------------*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include primaryFont;
+  margin: 0;
+  padding: 0.5em 0;
+}
+ 
+h1 {
+  @include fontSize(30px);
+}
+
+h2 {
+  @include fontSize(24px);
+}
+
+h3 {
+  @include fontSize(20px);
+}
+
+h4 {
+  @include fontSize(18px);
+}
+
+h5 {
+  @include fontSize(16px);
+}
+
+h6 {
+  @include fontSize(14px);
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+/*-----------------------------------------------------------------------------
+ *           COMMONS 
+ *---------------------------------------------------------------------------*/
+
+.f-left {
+  float: left;
+}
+
+.f-right {
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
+/*-----------------------------------------------------------------------------
+ *           GENERIC TAGS            
+ *---------------------------------------------------------------------------*/
+
+img {
+  border: 2px solid #000;
+}
+
+strong {
+  font-weight: 800;
+}
+
+q,
+cite {
+  font-style: italic;
+}
+
+/* List */
+
+ul, ol, dl {
+  margin-left: 1.25em;
+  padding: 0;
+}
+
+ul li {
+  list-style: disc;
+}
+
+ol li {
+  list-style: decimal;
+}
+
+dl {
+  padding: 0.3em 0 0.6em;
+}
+
+dt {
+  padding-bottom: 0.3em;
+  text-decoration: underline;
+}
+
+p {
+  margin: 0;
+  padding-bottom: 0.6em;
+  word-wrap: break-word;
+
+  &:empty {
+    padding: 0;
+  }
+}
+
+.field {
+  padding: 0.3em 0;
+}
+
+hr {
+  border-top: 1px solid $primaryColor;
+}
+
+blockquote p {
+  margin-bottom: 0;
+}
+
+/* Tables */
+table {
+  border: 1px solid $primaryColor;
+  margin: 0.3em 0;
+  overflow-x: auto;
+  width: 100%;
+}
+
+table td,
+table th {
+  border: 1px solid #000;
+}
+
+.table > thead > tr > th {
+  border-bottom: 2px solid $primaryColor;
+}
+
+.views-field-views-send {
+  text-align: center;
+}
+
+.view .item-list li {
+  @include clearfix();
+  list-style: none;
+  margin: 0 0 0.25em 0;
+}
+      
+td, 
+th, 
+caption {
+  color: #7A7878;
+  padding: 0.5em 1.75em;
+}
+
+caption {
+  background: $fourthColor;
+  border-bottom: 3px solid $thirdColor;
+  color: $primaryColor;
+}
+
+th {
+  background: $fifthColor;
+  color: $primaryColor;
+}
+
+tr.even, tr.odd {
+  background: #fff;
+}
+
+/* Tabs */
+.tabs {
+  border-bottom: 0;
+  display: block;
+  margin: 0;
+  padding-top: 0.3em;
+  text-align: right;
+
+  li {
+    display: inline-block;
+    list-style: none;
+    padding: 0 0.3em;
+  }
+
+  a {
+    border: 2px solid #000;
+    font-size: 100%;
+    padding: 0.3em 0.5em;
+
+    &:hover {
+      border-color: #AAA;
+    }
+  }
+}
+
+/*-----------------------------------------------------------------------------
+ *           Form
+ *---------------------------------------------------------------------------*/
+  
+fieldset {
+  border: 1px solid $primaryColor;
+}
+
+.form-actions {
+  margin-top: 0.93em;
+
+  input {
+    display: inline-block;
+  }
+}
+    
+form {
+  clear: both;
+  display: block;
+  margin: 1.25em 0;
+
+  label {
+    @include fontSize(16px);
+    color: $primaryColor;
+    display: block;
+    font-weight: normal;
+    padding-bottom: 0.3em;
+  }
+                        
+  label.error {
+    font-weight: normal;
+    padding-top: 0.18em;
+  }
+}
+          
+.form-item {
+  margin: 0.3em 0;
+}
+
+.form-type-item {
+  @include fontSize(16px);
+  color: $secondaryColor;
+}
+
+.form-type-radio, 
+.form-type-checkbox {
+  margin: 0.938em 0;
+}
+
+.form-type-radio label, 
+.form-type-checkbox label {
+  display: inline;
+  font-weight: normal;
+  padding-bottom: 0.3em;
+  padding-left: 0.18em;
+}
+
+input,
+.form-text, 
+.form-select, 
+.form-textarea {
+  @include fontSize(16px);
+  -moz-border-radius: 1px;
+  -webkit-border-radius: 1px;
+  background: #FFF;
+  border-radius: 1px;
+  border: 1px solid $primaryColor;
+  clear: both;
+  color: $primaryColor;
+  display: block;
+  margin-bottom: 0.625em;
+  padding: 0.375em;
+  width: 100%;
+}
+
+input.form-checkbox,
+input.form-radio {
+  display: inline;
+  margin-right: 0.3em;
+  width: auto;
+}
+
+.form-item .description {
+  padding-top: 0.3em;
+}
+
+input.error, 
+textarea.error {
+  border: 1px solid #AB0000;
+}
+
+.form-required {
+  color: red;
+  padding-right: 0.3em;
+}
+
+.form-submit {
+  @include fontSize(20px);
+  background: none;
+  border: 2px solid $buttonColor;
+  color: $primaryColor;
+  cursor: pointer;
+  font-weight: normal;
+  margin-right: 0.6em;
+  padding: 0.3em 0.6em;
+  text-transform: uppercase;
+  width: auto;
+}
+
+.form-submit:hover {
+  filter: alpha(opacity=85);
+  opacity: 0.85;
+}
+
+.grippie {
+  display: none;
+}
+
+/* MORE LINK */
+.more-link a {
+  border: 2px solid #000;
+  padding: 0.3em 0.6em;
+  text-align: center;
+}
+
+iframe {
+  display: block;
+  margin: 0 auto 1.250em;
+}

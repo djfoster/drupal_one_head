@@ -1,0 +1,97 @@
+/* SITEBRANDING BLOCK */
+#block-mockup-branding {
+  float: left;
+  max-width: 150px;
+  z-index: 10;
+}
+
+@media #{$phone} { 
+  #block-mockup-branding {
+    max-width: 115px;
+  }
+}
+
+/* BLOCKS IN FRONT PAGE */
+.front .main-content .region-content .block {
+  border: 3px solid #CCC;
+  margin-bottom: 0.938em;
+}
+
+/* IMAGE IN NODES */
+article .field--type-image {
+  float: left;
+
+  img {
+    margin: 0 1em 1em 0;
+    max-height: 750px;
+    width: auto;
+  }
+}
+
+/* FIELD VIEW EMBED */
+.field--type-video-embed-field {
+  clear: both;
+}
+
+/* VIEW INSIDE MAIN CONTENT */
+.main-content {
+  .view a,
+  .view span {
+    display: inline-block;
+  }
+
+  .view ul {
+    margin-left: 0;
+  }
+
+  .views-row img {
+    height: auto;
+    width: 100%;
+  }
+
+  .views-row > a {
+    float: none;
+    text-align: center;
+
+    img {
+      margin: 0 0.938em 0.938em 0;
+    }
+  }
+}
+
+/* VIEWS FLOATING IMAGE */
+.view-content {
+  .inner-image-container {
+    float: left;
+    img {
+      margin: 0 1em 1em 0;
+    }
+  }
+
+  h4 {
+    padding: 0;
+
+  }
+
+  .item-list li {
+    border-bottom: 1px solid $secondaryColor;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    word-wrap: break-word;
+
+    &:last-child {
+      border: none;
+    }
+  }
+}
+
+/* DISABLE STYLE FOR VIEWS ROW LIST */
+.content .views-row {
+  list-style: none;
+}
+
+.block-webform {
+  border: 3px dashed $fifthColor;
+  margin-top: 1.563em;
+  padding: 0.625em;
+}

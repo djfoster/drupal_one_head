@@ -1,0 +1,128 @@
+/*-----------------------------------------------------------------------------
+ *           MENU            
+ *---------------------------------------------------------------------------*/
+.menu--main {
+  float: right;
+}
+
+@media #{$phone} { 
+  .menu--main {
+    display: block;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    width: 100%;
+    z-index: 8;
+  }
+}
+
+ul.menu,
+.region,
+.views-row {
+  @include clearfix();
+}
+
+.block-menu ul.menu  {
+  display: flex;
+  li {
+    border-right: 1px solid $primaryColor;
+    display: inline-flex;
+    position: relative;
+  }
+}
+
+@media #{$phone} { 
+  .menu--main {
+    ul.menu {
+      margin-top: 3.5em;
+    }
+  }
+
+  .block-menu ul.menu {
+    display: block;
+    background: $fourthColor;
+    margin-left: 0;
+
+    li {
+      border: none;
+      display: block;
+
+      a {
+        border-bottom: 1px dotted $fifthColor;
+        display: block;
+      }
+    }
+
+    .is-active {
+      background: $secondaryColor;
+      color: $fifthColor;
+    }
+
+    .menu {
+      li {
+        border: none;
+        a {
+          padding-left: 1em;
+
+          &:before {
+            content: '-- ';
+          }
+        }
+      }
+    }
+  }
+}
+
+.menu {
+  .menu {
+    background: $fourthColor;
+    border: 1px solid $fourthColor;
+    display: none !important;
+    margin: 0 !important;
+    min-width: 200px;
+    position: absolute;
+    top: 100%;
+    z-index: 10;
+
+    .menu-item {
+      display: block;
+      float: none;
+      border-bottom: 1px solid $primaryColor;
+      border-right: none;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      a {
+        display: block;
+        padding: 0.5em;
+        
+      }
+    }
+  }
+
+  .menu-item {
+    margin: 0;
+
+    a {
+      font-size: 16px;
+      padding: 0.5em 0.75em;
+      text-align: left;
+
+      &:hover {
+      }
+    }
+  }
+}
+
+@media #{$phone} { 
+  .menu .menu {
+    display: block !important;
+    position: relative
+  }
+}
+
+.menu .menu-item:hover .menu {
+    display: block !important;
+}

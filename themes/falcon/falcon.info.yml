@@ -1,0 +1,31 @@
+name: falcon
+type: theme
+description: 'these is a theme created by script.'
+core: 8.x
+base theme: classy 
+
+stylesheets-override:
+stylesheets-remove:
+  - system.theme.css
+
+regions:
+  content: Content
+  help: Help
+  header_top: Header top
+  header: Header
+  header_bottom: Header bottom
+  highlighted: Highlighted
+  before_content: Before content
+  after_content: After content
+  breadcrumb: Breadcrumb
+  sidebar_first: Sidebar left
+  sidebar_second: Sidebar right
+  content_top: Content top
+  content_bottom: Content bottom
+  footer_top: Footer top
+  footer: Footer
+  footer_bottom: Footer bottom
+
+libraries:
+  - falcon/bootstrap 
+  - falcon/custom-falcon

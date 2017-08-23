@@ -1,0 +1,49 @@
+//Main Colors
+$primaryColor: #333;
+$secondaryColor: rgba(0, 0, 0, 0.39);
+$thirdColor: #3A3A3A;
+$fourthColor: #AFAFAF;
+$fifthColor: #C7C1C1;
+
+$buttonColor: #2A6496;
+
+//Media queries
+$tablet: "(max-width: 991px)";
+$phone: "(max-width: 767px)";
+$smallPhone: "(max-width: 575px)";
+
+@mixin primaryFont {
+  font-family: 'Patrick Hand', cursive;
+}
+/**
+@mixin secondaryFont {
+  font-family: 'Baloo', cursive;
+}
+**/
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
+}
+
+@mixin fontSize($size) {
+  font-size: $size; //Fallback in px
+  font-size: calculateRem($size);
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+//Clearfix to use in other rules
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}  

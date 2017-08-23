@@ -1,0 +1,29 @@
+name: Mockup 
+type: theme
+description: 'Base theme like a mockup'
+core: 8.x
+base theme: classy
+
+stylesheets-override:
+stylesheets-remove:
+  - system.theme.css
+regions:
+  content: Content
+  help: Help
+  header_top: 'Header top'
+  header: Header
+  header_bottom: 'Header bottom'
+  highlighted: Highlighted
+  before_content: 'Before bottom'
+  after_content: 'After bottom'
+  breadcrumb: Breadcrumb
+  sidebar_first: 'Sidebar First' 
+  sidebar_second: 'Sidebar Second' 
+  content_top: 'Content top'
+  content_bottom: 'Content bottom'
+  footer_top: 'Footer top'
+  footer: Footer
+  footer_bottom: 'Footer bottom'
+libraries:
+  - mockup/bootstrap 
+  - mockup/custom-mockup

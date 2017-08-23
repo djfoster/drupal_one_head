@@ -1,0 +1,72 @@
+//PRESLEY ITEM
+.field--name-field-presley-item {
+  display: flex;
+  margin: 0;
+  padding: 1em 0;
+
+  @media #{$phone} {
+   flex-direction: column; 
+  }
+
+  > .field__item {
+    list-style: none;
+    margin-bottom: 1em;
+    padding: 1em 0.5em;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+//PRESLEY TITLE 
+.field--name-field-presley-title {
+  @include fontSize(20px);
+  font-weight: 800;
+  line-height: 1;
+  margin: 0.5em 0;
+  min-height: 40px;
+}
+
+//PRESLEY ICON 
+.field--name-field-presley-icon {
+  img {
+    border-radius: 50px;
+    border: 1px solid $primaryColor1;
+    box-sizing: content-box;
+    height: auto;
+    margin: 0;
+    max-width: 32px;
+    padding: 10px;
+  }  
+}
+
+//PRESLEY IMAGE 
+article .field--name-field-presley-image,
+.field--name-field-presley-image {
+  clear: both;
+  float: none;
+  text-align: center;  
+  margin-bottom: 0.5em;
+
+  img {
+    border: 1px solid #CCC;
+    margin: 0;
+    padding: 0.5em;
+  }
+}
+
+//PRESLEY LINK 
+.field--name-field-presley-link {
+  a {
+    border: 1px solid $primaryColor1;
+    display: inline-block;
+    padding: 0.25em 0.5em;
+  }
+}
+
+//PRESLEY PARTICULARITY 
+.region-sidebar-second,
+.region-sidebar-first {
+  .field--name-field-presley-item {
+     flex-direction: column; 
+  }
+}

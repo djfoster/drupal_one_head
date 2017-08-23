@@ -1,0 +1,29 @@
+.madonna-component {
+  background: rgba(0, 0, 0, 0.15);
+  padding: 1em 2.5em;
+  margin-bottom: 1em;
+}
+
+.madonna-component--title {
+  @include fontSize(18px);
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.madonna-component--quote {
+  font-style: italic;
+
+  &::before {
+    content: '"';
+  }
+
+  &::after {
+    content: '"';
+  }
+}
+
+.madonna-component--author {
+  @include fontSize(12px);
+  text-align: right;
+}

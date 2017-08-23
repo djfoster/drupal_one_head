@@ -1,0 +1,81 @@
+.slideshow-main-link {
+  display: block;
+}
+
+//SLIDE CONTAINER
+.inner-slide-container {
+  background: rgba(0, 0, 0, 0.36);
+  bottom: 0;
+  color: #FFF;
+  height: 100%;
+  padding: 8% 3em 1em;
+  position: absolute;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+
+  @media #{$tablet} { 
+    padding: 1em;
+  }
+
+
+  //SLIDE TITLE 
+  h3 {
+    @include fontSize(36px);
+    line-height: 1;
+    max-width: 700px;
+    padding: 0;
+
+    @media #{$phone} { 
+      @include fontSize(18px);
+      line-height: 1;
+      padding: 0;
+    }
+
+  }
+
+  //SLIDE DESCRIPTION 
+  p {
+    max-width: 700px;
+
+    @media #{$phone} { 
+      @include fontSize(14px);
+      line-height: 1;
+      padding-bottom: 0;
+    }
+  }
+
+  //SLIDE LINK 
+  .more-link {
+    @include buttonStyle();
+    display: inline-block;
+    padding: 0.5em 2.25em;
+
+    a {
+      border-color: #FFF;
+      color: #FFF;
+    }
+  }
+}
+
+//EXCLUSIVE TO PHONE
+@media #{$phone} { 
+  .inner-slide-container h4 {
+    @include fontSize(16px);
+    line-height: 1;
+    padding: 0;
+  }
+}
+
+//SLIDE PARTICULARITY
+.views_slideshow_cycle_teaser_section,
+.views_slideshow_cycle_slide {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.views_slideshow_cycle_slide {
+  float: left;
+  margin-right: -100%;
+  position: relative !important;
+}

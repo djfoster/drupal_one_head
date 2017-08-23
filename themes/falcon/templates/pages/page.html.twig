@@ -1,0 +1,166 @@
+{% if page.header_top %}
+<section class="header-top clearfix">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+          {{ page.header_top }}
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% if page.header %}
+<header class="content-header clearfix">
+  {{ page.header }}
+</header>
+{% endif %}
+
+{% if page.header_bottom %}
+<section class="header-bottom clearfix">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+          {{ page.header_bottom }}
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% if page.highlighted %}
+<section class="highlighted">
+  {{ page.highlighted }}
+</section>
+{% endif %}
+
+{% if page.before_content %}
+<section class="before-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        {{ page.before_content }}
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% if page.content_top %}
+<section class="content-top">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        {{ page.content_top }}
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="main-content">
+  <div class="container">
+    <div class="row">
+
+      {% if page.sidebar_first %}
+      <aside class="col-md-4">
+        {{ page.sidebar_first }}
+      </aside>
+      {% endif %}
+
+      {% if page.content %}
+        {% if page.sidebar_first and page.sidebar_second  %}
+        <main class='col-md-4'>
+        {% elseif page.sidebar_first or page.sidebar_second %}
+        <main class='col-md-8'>
+        {% else %}
+        <main class='col-md-12'>
+        {% endif %}
+
+        <div class="visually-hidden"><a id="main-content" tabindex="-1"></a></div>
+        {{ messages }}
+        {% if page.help %}
+          <div class="help">
+            {{ page.help }}
+          </div>
+        {% endif %}
+        {% if action_links %}
+          <ul class="action-links">
+            {{ action_links }}
+          </ul>
+        {% endif %}
+
+        {{ page.breadcrumb }}
+        {{ page.content }}
+      </main>
+      {% endif %}
+
+      {% if page.sidebar_second %}
+      <aside class="col-md-4">
+        {{ page.sidebar_second }}
+      </aside>
+      {% endif %}
+    
+    </div>
+  </div>
+</section>
+
+{% if page.content_bottom %}
+<section class="content-bottom">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        {{ page.content_bottom }}
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% if page.after_content %}
+<section class="after-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        {{ page.after_content }}
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% if page.footer_top %}
+<section class="footer-top">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        {{ page.footer_top }}
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% if page.footer %}
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        {{ page.footer }}
+      </div>
+    </div>
+  </div>
+</footer>
+{% endif %}
+
+{% if page.footer_bottom %}
+<section class="footer-bottom">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        {{ page.footer_bottom }}
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}

@@ -1,0 +1,48 @@
+//LENNON ITEM
+.paragraph--type--lennon-item {
+  @include clearfix();
+  color: $baseColor1;
+  position: relative;
+
+  //LENNON INNER CONTAINER
+  .slideshow-group-two {
+    background: rgba(0, 0, 0, 0.2);
+    bottom: 0;
+    height: 100%;
+    padding: 8% 3em 1em;
+    position: absolute;
+    right: 0;
+    text-align: left;
+    width: 100%;
+
+    @media #{$tablet} {
+      padding: 1% 3em 1em;
+    }
+
+    @media #{$phone} {
+      padding: 1em;
+    }
+  }
+
+  //LENNON IMAGE
+  img {
+    margin-bottom: 0 !important;
+  }
+}
+
+//LENNON TITLE
+.field--name-field-lennon-title {
+  @include fontSize(36px);
+  font-weight: 800;
+
+  @media #{$phone} {
+    @include fontSize(20px);
+  }
+}
+
+//LENNON LINK
+.field--name-field-lennon-link a {
+  @include buttonStyle();
+  display: inline-block;
+  margin-top: 1em;
+}

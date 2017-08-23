@@ -1,0 +1,65 @@
+/*-----------------------------------------------------------------------------
+ *           REGIONS            
+ *---------------------------------------------------------------------------*/
+.region {
+  border: 2px solid $primaryColor;
+  padding: 1.25em;
+}
+
+.region--title {
+  border: 2px solid #000;
+  color: $primaryColor;
+  cursor: pointer;
+  margin: 0;
+  padding: 0.625em;
+  text-align: center;
+  text-transform: uppercase;
+
+  &:hover {
+    background: $secondaryColor;
+  }
+}
+
+/*-----------------------------------------------------------------------------
+ *           SIDEBAR            
+ *---------------------------------------------------------------------------*/
+.sidebar {
+  a {
+    display: block;
+  }
+
+  .views-row {
+    margin-bottom: 0.625em;
+    padding-bottom: 0.3em;
+  }
+
+  ul {
+    margin-left: 0;
+  }
+
+  h3 {
+    padding: 0.625em 0;
+  }
+}
+
+/*-----------------------------------------------------------------------------
+ *           FOOTER            
+ *---------------------------------------------------------------------------*/
+footer {
+  h4 {
+    @include fontSize(18px);
+  }
+
+  ul {
+    margin: 0;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  .views-row {
+    margin-bottom: 0.625em;
+  }
+
+}

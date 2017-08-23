@@ -1,0 +1,27 @@
+.jackson-component {
+  display: flex;
+  padding: 1em 0;
+}
+
+.jackson-component--icon {
+  float: left;
+
+  img {
+    margin: 0 0.5em 0.5em 0;
+    max-width: 32px;
+    height: auto;
+  }  
+}
+
+.jackson-component--inner-wrapper {
+  padding: 0 0.5em;
+  width: 75%;
+}
+
+.jackson-component--image {
+  width: 25%;
+
+  p {
+    @include fontSize(12px);
+  }
+}

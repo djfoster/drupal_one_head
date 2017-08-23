@@ -1,0 +1,57 @@
+.slideshow-main-link {
+  display: block;
+}
+
+.inner-slide-container {
+  background: rgba(0, 0, 0, 0.26);
+  bottom: 0;
+  color: #FFF;
+  padding: 1em;
+  position: absolute;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+
+  h3 {
+    @include fontSize(28px);
+    padding: 0;
+  }
+
+  .more-link {
+    display: inline-block;
+
+    a {
+      border-color: #FFF;
+      color: #FFF;
+    }
+  }
+}
+
+@media #{$phone} { 
+
+  .inner-slide-container {
+    padding: 0.5em 1em;
+    h3 {
+      @include fontSize(18px);
+      line-height: 1;
+      padding: 0;
+    }
+    p {
+      @include fontSize(14px);
+      line-height: 1;
+      padding-bottom: 0;
+    }
+  }
+}
+
+.views_slideshow_cycle_teaser_section,
+.views_slideshow_cycle_slide {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.views_slideshow_cycle_slide {
+  float: left;
+  margin-right: -100%;
+  position: relative !important;
+}

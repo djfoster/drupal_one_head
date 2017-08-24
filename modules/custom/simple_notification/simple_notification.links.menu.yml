@@ -1,0 +1,14 @@
+simple_notification.notification:
+  title: Notification
+  route_name: simple_notification.notification
+  parent: system.admin_config
+  description: 'Notification Settings.'
+  #position: left
+  weight: 1
+  
+simple_notification.settings_form:
+  title: 'Notification Settings'
+  parent: simple_notification.notification
+  description: 'Notification settings.'
+  weight: 1
+  route_name: simple_notification.notification.config

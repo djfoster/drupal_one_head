@@ -1,0 +1,96 @@
+<?php
+
+/**
+ * @file
+ * Contains simple_notificaion.module
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Component\Utility\Html;
+use Drupal\simple_notification\SimpleNotification;
+
+/**
+ * Implements hook_help().
+ */
+function simple_notification_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the simple notification module.
+    case 'help.page.simple_notification':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('The Simple Notification module provides a page config. Administrators can define the sending of notifications when a content type is created.') . '</p>';
+      return $output;
+  }
+}
+
+/**
+ * Implements hook_mail().
+ */
+function simple_notification_mail($key, &$message, $params) {
+  $options = array(
+    'langcode' => $message['langcode'],
+  );
+  switch ($key) {
+    case 'node_insert':
+      $message['from'] = \Drupal::config('system.site')->get('mail');
+      $message['subject'] = t('Node creation @title', array('@title' => $params['node_title']), $options);
+      $message['body'][] = $params['message'];
+      break;
+  }
+}
+
+/**
+* Implements hook_entity_insert().
+*/
+function simple_notification_entity_insert(Drupal\Core\Entity\EntityInterface $entity) {
+  if ($entity->getEntityTypeId() === 'node') {
+    $bundle = $entity->bundle();
+    $settings_notification = SimpleNotification::getSettings($bundle);
+    $activate_notification = $settings_notification['activate'];
+    if ($activate_notification) {
+      $roles_notification = $settings_notification['roles'];
+      $users = simple_notification_users_by_role($roles_notification);
+      $to = simple_notification_email_addresses($users);
+      
+      if (empty($to)) return;
+      
+      $mailManager = \Drupal::service('plugin.manager.mail');
+      $module = 'simple_notification';
+      $key = 'node_insert';
+      $link = $entity->toLink()->toString();
+      $author = $entity->getOwner()->getAccountName();
+      $node_title = $entity->label();
+      $message = t('The user @author created the content @node_title. Go to the content in the following link @link.', ['@author' => $author, '@node_title' => $node_title, '@link' => $link]);
+      $params['message'] = $message;
+      $params['node_title'] = $node_title;
+      $langcode = $entity->language()->getId();
+      $send = true;
+      $result = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
+    }
+  }
+}
+
+function simple_notification_users_by_role($roles) {
+  
+  $user_storage = \Drupal::entityTypeManager()->getStorage('user');
+
+  $ids = $user_storage->getQuery()
+    ->condition('status', 1)
+    ->condition('roles', $roles, 'IN')
+    ->execute();
+  
+  $users = $user_storage->loadMultiple($ids);
+  
+  return $users;
+}
+
+function simple_notification_email_addresses($users) {
+  $email_addresses_array = [];
+  foreach ($users as $user) {
+    $email = $user->getEmail();
+    if (empty($email)) continue;
+    $email_addresses_array[] = $email;
+  }
+  
+  return implode(',', $email_addresses_array);
+}

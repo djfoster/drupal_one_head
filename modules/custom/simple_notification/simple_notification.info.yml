@@ -1,4 +1,4 @@
-name: Simple Notification
+name: Simple Notification mac
 type: module
 description: 'Defines the sending of notifications when a node is created.'
 package: Mail

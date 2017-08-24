@@ -7,7 +7,7 @@ simple_notification.notification:
     _permission: 'access administration pages'
 
 simple_notification.notification.config:
-  path: '/admin/config/notification/simple-notification'
+  path: '/admin/config/notification/simple-notification-mac'
   defaults:
     _form: '\Drupal\simple_notification\Form\SimpleNotificationForm'
     _title: 'Notifications Settings'

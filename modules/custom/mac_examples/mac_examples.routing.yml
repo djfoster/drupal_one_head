@@ -1,0 +1,7 @@
+mac_examples.page:
+  path: '/admin/mac-examples'
+  defaults:
+    _form: '\Drupal\mac_examples\Form\MacExamplesForm'
+    _title: 'Form MAC'
+  requirements:
+    _permission: 'access administration pages'

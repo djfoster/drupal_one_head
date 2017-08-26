@@ -1,6 +1,6 @@
 name: MAC Examples 1
 type: module
-description: 'Module created for classes in MAC.'
+description: 'Module created for classes in MAC Instituto.'
 package: MAC
 dependencies:
   - system

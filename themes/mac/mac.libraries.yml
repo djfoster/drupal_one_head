@@ -1,0 +1,4 @@
+custom-mac:
+  css:
+    theme:
+      css/styles.css: {}
